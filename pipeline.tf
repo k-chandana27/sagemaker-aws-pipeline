@@ -257,7 +257,7 @@ artifacts:
   files:
     - error_logs.csv
     - train_and_deploy.py
-    - train_script.py
+    - train.py
   discard-paths: no
 EOF
   }
