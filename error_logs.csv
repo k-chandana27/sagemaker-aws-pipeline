@@ -1,4 +1,4 @@
-error_messe,recommended_action
+error_message,recommended_action
 "Error: System initialization failure","Check system logs and restart services"
 "Error: Database connection timeout","Verify database connectivity"
 "Error: Configuration file missing","Restore configuration from backup"
