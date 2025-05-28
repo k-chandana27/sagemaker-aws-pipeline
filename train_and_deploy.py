@@ -6,6 +6,7 @@ import boto3
 import pandas as pd
 from sagemaker.sklearn.estimator import SKLearn
 import os
+import shutil 
 
 def prepare_data(bucket_name, key):
     """
@@ -98,7 +99,7 @@ def main():
     df = pd.DataFrame({"error_message": X, "recommended_action": y})
     
     # Save training data locally first
-    os.makedirs("poc_data", exist_ok=True)
+    #os.makedirs("poc_data", exist_ok=True)
     #training_data_path = "poc_data/train.csv"
     training_data_path = r"C:\Chandana-Learning\Chandana-Learning\train.csv"
     df.to_csv(training_data_path, index=False)
