@@ -101,11 +101,14 @@ def main():
     # Save training data locally first
     #os.makedirs("poc_data", exist_ok=True)
     #training_data_path = "poc_data/train.csv"
-    training_data_path = r"C:\Chandana-Learning\Chandana-Learning\train.csv"
-    df.to_csv(training_data_path, index=False)
-    
+    #training_data_path = r"C:\Chandana-Learning\Chandana-Learning\train.csv"
+    #df.to_csv(training_data_path, index=False)
+
+    local_temp = "train.csv"
+    shutil.copy(r"C:\Chandana-Learning\Chandana-Learning\train.csv", local_temp)
+    s3_train_path = session.upload_data(local_temp, bucket=bucket_name, key_prefix="training")
     # Upload training data to S3
-    s3_train_path = session.upload_data(training_data_path, bucket=bucket_name, key_prefix="training")
+    #s3_train_path = session.upload_data(training_data_path, bucket=bucket_name, key_prefix="training")
     
     # Create the training script
     create_training_script()
