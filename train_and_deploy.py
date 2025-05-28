@@ -12,7 +12,7 @@ def prepare_data(bucket_name, key):
     Download CSV from S3, load into Pandas, and return features and labels.
     """
     s3 = boto3.client('s3')
-    local_path = '/tmp/error_logs.csv'
+    local_path = r"C:\Chandana-Learning\Chandana-Learning\error_logs.csv"
     
     s3.download_file(bucket_name, key, local_path)
     df = pd.read_csv(local_path)
